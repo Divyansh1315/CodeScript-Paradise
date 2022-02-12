@@ -1,6 +1,8 @@
 from datetime import datetime
+from email.policy import default
 from pyexpat import model
 from sre_parse import State
+from django import forms
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -98,6 +100,8 @@ class hospital(models.Model):
 
     
 
+
+
 class refernce(models.Model):
     refernce_sno = models.AutoField(primary_key=True)
     refernce_date = models.DateTimeField(default=datetime.now,blank=True)
@@ -107,5 +111,10 @@ class refernce(models.Model):
     patientID = models.CharField(max_length=20,default='default')
     patientInfo = models.FileField(upload_to='uploads/')
     message = models.CharField(max_length=500)
-    acceptance = models.BooleanField(default=False)
+    acceptance_choices =[
+    (1, "Waiting"),
+    (2, "Accepted"),
+    (3, "Rejected"),
+]
+    acceptance = models.CharField(choices=acceptance_choices ,default=1,max_length=2)
 # Create your models here.

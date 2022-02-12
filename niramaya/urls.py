@@ -9,6 +9,7 @@ urlpatterns = [
     path('refer_history',views.history,name='refer_history'),  
     path('refer_request',views.request,name='refer_request'),  
     path('your_account',views.account,name='your_account'),
+    path('search',views.search,name='search'),
     path('handelLogin',views.handelLogin,name='handelLogin'),
     path('logout',views.handelLogout,name='handelLogin'),
     path('createHospital',views.createHospital,name='createHospital'),

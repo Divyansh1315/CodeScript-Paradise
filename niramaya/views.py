@@ -1,9 +1,10 @@
 import imp
+from multiprocessing import context
 from pickle import NONE
 from django.shortcuts import redirect, render
 from django.http import HttpResponse
-from django.contrib.auth.models import User 
-from django.contrib.auth  import authenticate,  login, logout
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate,  login, logout
 from .models import hospital
 
 # Create your views here.
@@ -14,28 +15,31 @@ def index(request):
     #     return render(request,'niramaya/index.html',{'username': request.user})
     # else:
     #     return render(request,'nirmaya/index.html')
-    return render(request,'niramaya/index.html')
+    return render(request, 'niramaya/index.html')
+
 
 def handelLogin(request):
     if request.method == 'POST':
         username = request.POST['username']
         password = request.POST['password']
 
-        User = authenticate(username = username, password = password)
+        User = authenticate(username=username, password=password)
 
         if User is not None:
-            login(request,User)
+            login(request, User)
             print('user logged in successfully')
-            return render(request,'niramaya/register.html',{'username': request.user})
+            return render(request, 'niramaya/register.html', {'username': request.user})
         else:
             print("something went wrong")
-            return render(request,'niramaya/login.html',{})
+            return render(request, 'niramaya/login.html', {})
     return HttpResponse("404 not found: Not authorised please follow the inWebFrame to navigate through pages only")
+
 
 def handelLogout(request):
     logout(request)
     print('you have been loged out of account successfully')
     return redirect('login')
+
 
 def createHospital(request):
     if request.method == 'POST':
@@ -131,14 +135,179 @@ def createHospital(request):
         ortho_JR = request.POST['Ortho_JR']
         ortho_spine = request.POST['Ortho_spine']
 
-        hospital = hospital(user=user,hospital_name=hospital_name,serial=serial,Level=Level,address=address,State=State,district=district,phone=phone,head=head,doctor_nos=doctor_nos,skilled_nos=skilled_nos,non_skilled_nos=non_skilled_nos,gen_bed=gen_bed,spec_bed=spec_bed,surg_bed=surg_bed,av_gen_bed=av_gen_bed,av_spec_bed=av_spec_bed,av_surg_bed=av_surg_bed,ICU_units=ICU_units,CIC_units=CIC_units,BIC_units=BIC_units,SIC_units=SIC_units,PsIC_units=PsIC_units,PeIC_units=PeIC_units,NIC_units=NIC_units,TIC_units=TIC_units,DIC_units=DIC_units,PrIC_units=PrIC_units,Nursery_units=Nursery_units,Lab_chem=Lab_chem,Lab_hemo=Lab_hemo,Lab_microB=Lab_microB,Lab_trans=Lab_trans,Lab_immuno=Lab_immuno,Lab_surg_path=Lab_surg_path,Lab_cyto=Lab_cyto,C_cath=C_cath,C_rehab=C_rehab,C_surgery=C_surgery,C_stenting=C_stenting,C_intervene=C_intervene,C_electro=C_electro,C_vas_interv=C_vas_interv,C_vas_surg=C_vas_surg,R_com_T=R_com_T,R_com_TA=R_com_TA,R_dig_mamo=R_dig_mamo,R_dig_IMRT=R_dig_IMRT,R_dig_MRA=R_dig_MRA,R_dig_MRI=R_dig_MRI,R_dig_PET=R_dig_PET,R_dig_SPECT=R_dig_SPECT,Re_phy=Re_phy,Re_sp=Re_sp,EME_dept=EME_dept,EME_ped_TC=EME_ped_TC,EME_TC=EME_TC,N_EEG=N_EEG,N_sleep=N_sleep,Sp_BICU=Sp_BICU,Sp_CCU=Sp_CCU,Sp_det=Sp_det,Sp_ICU=Sp_ICU,Sp_NIC=Sp_NIC,Sp_PeIC=Sp_PeIC,Sp_PrIC=Sp_PrIC,Sp_PsIC=Sp_PsIC,Sp_SICU=Sp_SICU,Sp_TCU=Sp_TCU,On_chemo=On_chemo,On_rad=On_rad,Or_heart=Or_heart,Or_intestinal=Or_intestinal,Or_kidney=Or_kidney,Or_liver=Or_liver,Or_lung=Or_lung,Or_pancreas=Or_pancreas,ortho_Arth=ortho_Arth,ortho_JR=ortho_JR,ortho_spine=ortho_spine)
+        hospital = hospital(user=user, hospital_name=hospital_name, serial=serial, Level=Level, address=address, State=State, district=district, phone=phone, head=head, doctor_nos=doctor_nos, skilled_nos=skilled_nos, non_skilled_nos=non_skilled_nos, gen_bed=gen_bed, spec_bed=spec_bed, surg_bed=surg_bed, av_gen_bed=av_gen_bed, av_spec_bed=av_spec_bed, av_surg_bed=av_surg_bed, ICU_units=ICU_units, CIC_units=CIC_units, BIC_units=BIC_units, SIC_units=SIC_units, PsIC_units=PsIC_units, PeIC_units=PeIC_units, NIC_units=NIC_units, TIC_units=TIC_units, DIC_units=DIC_units, PrIC_units=PrIC_units, Nursery_units=Nursery_units, Lab_chem=Lab_chem, Lab_hemo=Lab_hemo, Lab_microB=Lab_microB, Lab_trans=Lab_trans, Lab_immuno=Lab_immuno, Lab_surg_path=Lab_surg_path, Lab_cyto=Lab_cyto, C_cath=C_cath, C_rehab=C_rehab, C_surgery=C_surgery,
+                            C_stenting=C_stenting, C_intervene=C_intervene, C_electro=C_electro, C_vas_interv=C_vas_interv, C_vas_surg=C_vas_surg, R_com_T=R_com_T, R_com_TA=R_com_TA, R_dig_mamo=R_dig_mamo, R_dig_IMRT=R_dig_IMRT, R_dig_MRA=R_dig_MRA, R_dig_MRI=R_dig_MRI, R_dig_PET=R_dig_PET, R_dig_SPECT=R_dig_SPECT, Re_phy=Re_phy, Re_sp=Re_sp, EME_dept=EME_dept, EME_ped_TC=EME_ped_TC, EME_TC=EME_TC, N_EEG=N_EEG, N_sleep=N_sleep, Sp_BICU=Sp_BICU, Sp_CCU=Sp_CCU, Sp_det=Sp_det, Sp_ICU=Sp_ICU, Sp_NIC=Sp_NIC, Sp_PeIC=Sp_PeIC, Sp_PrIC=Sp_PrIC, Sp_PsIC=Sp_PsIC, Sp_SICU=Sp_SICU, Sp_TCU=Sp_TCU, On_chemo=On_chemo, On_rad=On_rad, Or_heart=Or_heart, Or_intestinal=Or_intestinal, Or_kidney=Or_kidney, Or_liver=Or_liver, Or_lung=Or_lung, Or_pancreas=Or_pancreas, ortho_Arth=ortho_Arth, ortho_JR=ortho_JR, ortho_spine=ortho_spine)
 
         hospital.save()
 
-    return render(request,'niramaya/register.html',{'username': request.user})
+    return render(request, 'niramaya/register.html', {'username': request.user})
+
 
 def refer(request):
-    return render(request,'niramaya/ref1.html')
+    return render(request, 'niramaya/ref1.html')
+
+
+def search(request):
+    Q_av_gen_bed = request.POST.get('Q_branch_available_gen_beds',False)
+    Q_av_spec_bed = request.POST.get('Q_branch_available_spec_beds',False)
+    Q_av_surg_bed = request.POST.get('Q_branch_available_srg_beds',False)
+
+    Q_ICU_units = request.POST.get('Q_branch_ICU',False)
+    Q_CIC_units = request.POST.get('Q_branch_CIC',False)
+    Q_BIC_units = request.POST.get('Q_branch_BIC',False)
+    Q_SIC_units = request.POST.get('Q_branch_SIC',False)
+    Q_PsIC_units = request.POST.get('Q_branch_PsIC',False)
+    Q_PeIC_units = request.POST.get('Q_branch_PeIC',False)
+    Q_NIC_units = request.POST.get('Q_branch_NIC',False)
+    Q_TIC_units = request.POST.get('Q_branch_TIC',False)
+    Q_DIC_units = request.POST.get('Q_branch_DIC',False)
+    Q_PrIC_units = request.POST.get('Q_branch_PrIC',False)
+    Q_Nursery_units = request.POST.get('Q_branch_Nursery',False)
+
+    Q_Lab_chem = request.POST.get('Q_Lab_chem',False)
+    Q_Lab_hemo = request.POST.get('Q_Lab_hemo',False)
+    Q_Lab_microB = request.POST.get('Q_Lab_microB',False)
+    Q_Lab_trans = request.POST.get('Q_Lab_trans',False)
+    Q_Lab_immuno = request.POST.get('Q_Lab_immuno',False)
+    Q_Lab_surg_path = request.POST.get('Q_Lab_surg_path',False)
+    Q_Lab_cyto = request.POST.get('Q_Lab_cyto',False)
+
+    Q_C_cath = request.POST.get('Q_C_cath',False)
+    Q_C_rehab = request.POST.get('Q_C_rehab',False)
+    Q_C_surgery = request.POST.get('Q_C_surgery',False)
+    Q_C_stenting = request.POST.get('Q_C_stenting',False)
+    Q_C_intervene = request.POST.get('Q_C_interve',False)
+    Q_C_electro = request.POST.get('Q_C_electro',False)
+    Q_C_vas_interv = request.POST.get('Q_C_vas_interv',False)
+    Q_C_vas_surg = request.POST.get('Q_C_vas_sur',False)
+
+    Q_R_com_T = request.POST.get('Q_R_com_T',False)
+    Q_R_com_TA = request.POST.get('Q_R_com_TA',False)
+    Q_R_dig_mamo = request.POST.get('Q_R_dig_mamo',False)
+    Q_R_dig_IMRT = request.POST.get('Q_R_IMRT',False)
+    Q_R_dig_MRA = request.POST.get('Q_R_MRA',False)
+    Q_R_dig_MRI = request.POST.get('Q_R_MRI',False)
+    Q_R_dig_PET = request.POST.get('Q_R_PET',False)
+    Q_R_dig_SPECT = request.POST.get('Q_R_SPECT',False)
+
+    Q_Re_phy = request.POST.get('Q_Re_phy',False)
+    Q_Re_sp = request.POST.get('Q_Re_sp',False)
+
+    Q_EME_dept = request.POST.get('Q_EME_dept',False)
+    Q_EME_ped_TC = request.POST.get('Q_EME_ped_TC',False)
+    Q_EME_TC = request.POST.get('Q_EME_TC',False)
+
+    Q_N_EEG = request.POST.get('Q_N_sleep',False)
+    Q_N_sleep = request.POST.get('Q_N_EEG',False)
+
+    Q_Sp_BICU = request.POST.get('Q_Sp_BICU',False)
+    Q_Sp_CCU = request.POST.get('Q_Sp_CCU',False)
+    Q_Sp_det = request.POST.get('Q_Sp_det',False)
+    Q_Sp_ICU = request.POST.get('Q_Sp_ICU',False)
+    Q_Sp_NIC = request.POST.get('Q_Sp_NIC',False)
+    Q_Sp_PeIC = request.POST.get('Q_Sp_PeIC',False)
+    Q_Sp_PrIC = request.POST.get('Q_Sp_PrIC',False)
+    Q_Sp_PsIC = request.POST.get('Q_Sp_PsIC',False)
+    Q_Sp_SICU = request.POST.get('Q_Sp_SICU',False)
+    Q_Sp_TCU = request.POST.get('Q_Sp_TCU',False)
+
+    Q_On_chemo = request.POST.get('Q_On_chemo',False)
+    Q_On_rad = request.POST.get('Q_On_rad',False)
+
+    Q_Or_heart = request.POST.get('Q_Or_heart',False)
+    Q_Or_intestinal = request.POST.get('Q_Or_intestinal',False)
+    Q_Or_kidney = request.POST.get('Q_Or_kidney',False)
+    Q_Or_liver = request.POST.get('Q_Or_liver',False)
+    Q_Or_lung = request.POST.get('Q_Or_lung',False)
+    Q_Or_pancreas = request.POST.get('Q_Or_pancreas',False)
+
+    Q_ortho_Arth = request.POST.get('Q_Ortho_Arth',False)
+    Q_ortho_JR = request.POST.get('Q_Ortho_JR',False)
+    Q_ortho_spine = request.POST.get('Q_Ortho_spine',False)
+
+    raw_query_set = {
+        "av_gen_bed":Q_av_gen_bed,
+        "av_spec_bed":Q_av_spec_bed,
+        "av_surg_bed":Q_av_surg_bed,
+        "ICU_units":Q_ICU_units,
+        "CIC_units":Q_CIC_units,
+        "BIC_units":Q_BIC_units,
+        "SIC_units":Q_SIC_units,
+        "PsIC_units":Q_PsIC_units,
+        "PeIC_units":Q_PeIC_units,
+        "NIC_units":Q_NIC_units,
+        "TIC_units":Q_TIC_units,
+        "DIC_units":Q_DIC_units,
+        "PrIC_units":Q_PrIC_units,
+        "Nursery_units":Q_Nursery_units,
+        "Lab_chem":Q_Lab_chem,
+        "Lab_hemo":Q_Lab_hemo,
+        "Lab_microB":Q_Lab_microB,
+        "Lab_trans":Q_Lab_trans,
+        "Lab_immuno":Q_Lab_immuno,
+        "Lab_surg_path":Q_Lab_surg_path,
+        "Lab_cyto":Q_Lab_cyto,
+        "C_cath":Q_C_cath,
+        "C_rehab":Q_C_rehab,
+        "C_surgery":Q_C_surgery,
+        "C_stenting":Q_C_stenting,
+        "C_intervene":Q_C_intervene,
+        "C_electro":Q_C_electro,
+        "C_vas_interv":Q_C_vas_interv,
+        "C_vas_surg":Q_C_vas_surg,
+        "R_com_T":Q_R_com_T,
+        "R_com_TA":Q_R_com_TA,
+        "R_dig_mamo":Q_R_dig_mamo,
+        "R_dig_IMRT":Q_R_dig_IMRT,
+        "R_dig_MRA":Q_R_dig_MRA,
+        "R_dig_MRI":Q_R_dig_MRI,
+        "R_dig_PET":Q_R_dig_PET,
+        "R_dig_SPECT":Q_R_dig_SPECT,
+        "Re_phy":Q_Re_phy,
+        "Re_sp":Q_Re_sp,
+        "EME_dept":Q_EME_dept,
+        "EME_ped_TC":Q_EME_ped_TC,
+        "EME_TC":Q_EME_TC,
+        "N_EEG":Q_N_EEG,
+        "N_sleep":Q_N_sleep,
+        "Sp_BICU":Q_Sp_BICU,
+        "Sp_CCU":Q_Sp_CCU,
+        "Sp_det":Q_Sp_det,
+        "Sp_ICU":Q_Sp_ICU,
+        "Sp_NIC":Q_Sp_NIC,
+        "Sp_PeIC":Q_Sp_PeIC,
+        "Sp_PrIC":Q_Sp_PrIC,
+        "Sp_PsIC":Q_Sp_PsIC,
+        "Sp_SICU":Q_Sp_SICU,
+        "Sp_TCU":Q_Sp_TCU,
+        "On_chemo":Q_On_chemo,
+        "On_rad":Q_On_rad,
+        "Or_heart":Q_Or_heart,
+        "Or_intestinal":Q_Or_intestinal,
+        "Or_kidney":Q_Or_kidney,
+        "Or_liver":Q_Or_liver,
+        "Or_lung":Q_Or_lung,
+        "Or_pancreas":Q_Or_pancreas,
+        "ortho_Arth":Q_ortho_Arth,
+        "ortho_JR":Q_ortho_JR,
+        "ortho_spine":Q_ortho_spine,
+    }
+    
+
+    query_set = {}
+    for items in raw_query_set:
+        if raw_query_set[items]:
+            query_set[items] = raw_query_set[items]
+
+
+    print(query_set)
+
+    
+    context={
+        'hospitals' : 'hosp'
+    }
+    return render(request,'niramaya/ref1.html',context)
+
 
 def request(request):
     return render(request,'niramaya/request.html')

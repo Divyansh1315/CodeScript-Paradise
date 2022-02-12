@@ -131,7 +131,16 @@
 .patientDetails {
   margin-top: 70px;
 }
-
+.required{
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    grid-column-gap: 7vw;
+    grid-row-gap: 5vh;
+}
+.beds{
+    margin-top: 20px;
+    padding: 10px;
+}
 .patientform {
   border: 2px solid palevioletred;
   width: 80vw;
@@ -167,11 +176,13 @@
 .btn1 {
   margin-bottom: 30px;
 }
-
-#hospitals {
-  display: none;
+.hospital{
+    display: none;
 }
 
+#btnclick{
+    margin-left: 25vw;
+}
 .card1 {
   opacity: 1;
 }
@@ -190,9 +201,7 @@ button {
   padding: 5px;
   margin-bottom: 10px;
 }
-#html_btn {
-  /* display:none; */
-}
+
 
 .card-img-top {
   width: 300px;
