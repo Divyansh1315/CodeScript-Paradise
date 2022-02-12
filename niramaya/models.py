@@ -1,9 +1,11 @@
+from datetime import datetime
 from pyexpat import model
 from sre_parse import State
 from django.db import models
 from django.contrib.auth.models import User
 
 class hospital(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     sno = models.AutoField(primary_key=True)
     hospital_name = models.CharField(max_length=100)
     serial = models.CharField(max_length=10)
@@ -94,5 +96,16 @@ class hospital(models.Model):
     ortho_JR  = models.BooleanField(default=False)
     ortho_spine  = models.BooleanField(default=False)
 
+    
+
+class refernce(models.Model):
+    refernce_sno = models.AutoField(primary_key=True)
+    refernce_date = models.DateTimeField(default=datetime.now,blank=True)
+    refernce_hospital = models.ForeignKey(hospital,on_delete=models.CASCADE)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
+    patientName = models.CharField(max_length=50,default='default')
+    patientID = models.CharField(max_length=20,default='default')
+    patientInfo = models.FileField(upload_to='uploads/')
+    message = models.CharField(max_length=500)
+    acceptance = models.BooleanField(default=False)
 # Create your models here.

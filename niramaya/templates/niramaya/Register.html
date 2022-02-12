@@ -1,16 +1,16 @@
 {% extends 'niramaya/basic.html' %}
 
-{% block tittle %} 
+{% block tittle %}
 
 Register the hospital
 
 {% endblock %}
-{% block body %} 
+{% block body %}
 
 <div class="container my-5">
     <form action="" style="display:flex; flex-direction:column; gap:20px; width: 70%; margin: 0 auto;">
         <h1>Register The Hospital</h1>
-    
+
         <!-- type as details vary -->
         <h3>Basic Details</h3>
         <input name="name" id="brach_name"  placeholder="Enter the name of branch"></input>
@@ -40,7 +40,7 @@ Register the hospital
         <input name="available_srg_beds" id="branch_available_srg_beds"  placeholder="Enter the number of beads in branch"></input>
     
     
-        <!-- type integers -->
+        <!-- type checkbozes -->
         <h3>Care Units</h3>
         <input name="ICU_units" id="branch_ICU"  placeholder="Enter the number of beads in branch"></input>
         <input name="CIC_units" id="branch_CIC"  placeholder="Enter the number of beads in branch"></input>
@@ -128,6 +128,7 @@ Register the hospital
         
     </form>
 </div>
-  
-{% endblock %}
 
+{% endblock %}
+{%block js%}
+{%endblock%}

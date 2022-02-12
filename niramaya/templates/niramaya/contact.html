@@ -53,7 +53,7 @@
               <a
                 class="nav-link active"
                 style="color: aliceblue"
-                href="/niramaya/templates/about.html"
+                href="/niramaya/templates/niramaya/about.html"
                 >About</a
               >
             </li>
@@ -105,24 +105,46 @@
       </div>
     </nav>
 
-    <div
-      class="p-4 p-md-5 mb-4 text-white rounded bg-white d-md-flex justify-content-center align-items-center"
-    >
-      <div class="col-md-6 px-0">
-        <h1 class="display-4 fst-italic text-dark">
-          We take care of your swasthya
-        </h1>
-        <p class="lead my-3 fs-4 text-dark">
-          Our goal is to provide healthcare facilities to people <br />
-          before it's too late.
-        </p>
-      </div>
-      <div class="col-md-6 px-0">
-        <img
-          src="/niramaya/templates/niramaya/images/About-img1 (2).png"
-          alt=""
-        />
-      </div>
+    <!-- ---------------------Contact Form------------------------- -->
+
+    <div class="container my-5 col-md-6 col-auto" style="height: 62vh">
+      <h2 class="mb-4" style="font-weight: bold">Contact Us!!</h2>
+      <form>
+        <div class="form-group">
+          <input
+            class="form-control"
+            type="text"
+            placeholder="Your name"
+            style="border: 2px solid"
+          />
+        </div>
+
+        <div class="form-group my-3">
+          <input
+            type="email"
+            class="form-control"
+            id="exampleFormControlInput1"
+            style="border: 2px solid"
+            placeholder="name@example.com"
+          />
+        </div>
+
+        <div class="form-group my-2">
+          <textarea
+            class="form-control"
+            id="exampleFormControlTextarea1"
+            rows="5"
+            style="border: 2px solid"
+            placeholder="Your message"
+          ></textarea>
+        </div>
+
+        <div class="d-grid gap-2">
+          <button type="button" class="btn btn-outline-dark">
+            Send <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
     </div>
 
     <!-- --------Footer Section--------- -->
