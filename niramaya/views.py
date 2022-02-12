@@ -299,12 +299,16 @@ def search(request):
         if raw_query_set[items]:
             query_set[items] = raw_query_set[items]
 
-
-    print(query_set)
-
+    searched_hospitals = hospital.objects.all()
+    searched_hospitals= searched_hospitals.exclude(user = request.user)
+    searched_hospitals= searched_hospitals.filter(**query_set)
+    
+    if len(searched_hospitals) == 0:
+        print('XXXXX NO result found')
+        return render(request,'niramaya/ref1.html')
     
     context={
-        'hospitals' : 'hosp'
+        'searched_hospitals' : searched_hospitals
     }
     return render(request,'niramaya/ref1.html',context)
 

@@ -10,22 +10,22 @@ Register the hospital
 <div id="top" style="width: auto; margin: 50px auto;">
   <section class="patientDetails">
     <div class="patientform" style='margin: 50px auto;'>
-        <span class="patientHeading">Query Search</span>
-        <form action="./search" method="post">{% csrf_token %} 
-            <div class="required">
-                <div class="beds">
-            <p>Please select Bed type:</p>
+      <span class="patientHeading">Query Search</span>
+      <form action="./search" method="post">{% csrf_token %}
+        <div class="required">
+          <div class="beds">
+            <p>Beds:</p>
               <input type="checkbox" id="Q_branch_available_gen_beds" name="Q_branch_available_gen_beds" value=True>
               <label for="Q_branch_available_gen_beds">General Beds</label><br>
-              <input type="checkbox" id="Q_branch_available_spec_beds" name="Q_branch_available_spec_beds" value=True >
+              <input type="checkbox" id="Q_branch_available_spec_beds" name="Q_branch_available_spec_beds" value=True>
               <label for="Q_branch_available_spec_beds">Special Beds</label><br>
               <input type="checkbox" id="Q_branch_available_srg_beds" name="Q_branch_available_srg_beds" value=True>
               <label for="Q_branch_available_srg_beds">Surgical Beds</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Lab type:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Labs:</p>
               <input type="checkbox" id="Q_Lab_chem" name="Q_Lab_chem" value=True>
               <label for="Q_Lab_chem">Chemistry</label><br>
               <input type="checkbox" id="Q_Lab_hemo" name="Q_Lab_hemo" value=True>
@@ -40,11 +40,38 @@ Register the hospital
               <label for="Q_Lab_surg_path">Surgical Pathology</label><br>
               <input type="checkbox" id="Q_Lab_cyto" name="Q_Lab_cyto" value=True>
               <label for="Q_Lab_cyto">Cytology</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Cardiovascular Services:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Care Units:</p>
+              <input type="checkbox" id="Q_branch_ICU" name="Q_branch_ICU" value=True>
+              <label for="Q_branch_ICU">Intensive Care Unit</label><br>
+              <input type="checkbox" id="Q_branch_CIC" name="Q_branch_CIC" value=True>
+              <label for="Q_branch_CIC">Coronary Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_BIC" name="Q_branch_BIC" value=True>
+              <label for="Q_branch_BIC">Burn Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_SIC" name="Q_branch_SIC" value=True>
+              <label for="Q_branch_SIC">Surgical Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_PsIC" name="Q_branch_PsIC" value=True>
+              <label for="Q_branch_PsIC">Pyschiatric Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_PeIC" name="Q_branch_PeIC" value=True>
+              <label for="Q_branch_PeIC">Pediatric Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_NIC" name="Q_branch_NIC" value=True>
+              <label for="Q_branch_NIC">Neonatal Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_TIC" name="Q_branch_TIC" value=True>
+              <label for="Q_branch_TIC">Trauma Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_DIC" name="Q_branch_DIC" value=True>
+              <label for="Q_branch_DIC">Detox Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_PrIC" name="Q_branch_PrIC" value=True>
+              <label for="Q_branch_PrIC">Premature Intensive Care</label><br>
+              <input type="checkbox" id="Q_branch_Nursery" name="Q_branch_Nursery" value=True>
+              <label for="Q_branch_Nursery">Nursery</label><br>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Cardiovascular Services:</p>
               <input type="checkbox" id="Q_C_cath" name="Q_C_cath" value=True>
               <label for="Q_C_cath">Cardiac Cath Lab</label><br>
               <input type="checkbox" id="Q_C_rehab" name="Q_C_rehab" value=True>
@@ -61,40 +88,40 @@ Register the hospital
               <label for="Q_C_vas_interv">Vascular Intervention</label><br>
               <input type="checkbox" id="Q_C_vas_sur" name="Q_C_vas_sur" value=True>
               <label for="Q_C_vas_sur">Vascular Surgery</label><br>
-            
-              <br>  
-            </div>
-              <div class="beds">
-            <p>Please select Emergency Services:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Emergency Services:</p>
               <input type="checkbox" id="Q_EME_dept" name="Q_EME_dept" value=True>
               <label for="Q_EME_dept">Emergency Department</label><br>
               <input type="checkbox" id="Q_EME_ped_TC" name="Q_EME_ped_TC" value=True>
               <label for="Q_EME_ped_TC">Pediatric Trauma Center</label><br>
               <input type="checkbox" id="Q_EME_TC" name="Q_EME_TC" value=True>
               <label for="Q_EME_TC">Trauma Center</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Neuroscience type:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Neuroscience Services:</p>
               <input type="checkbox" id="Q_N_EEG" name="Q_N_EEG" value=True>
               <label for="Q_N_EEG">Electroencephalography</label><br>
               <input type="checkbox" id="Q_N_sleep" name="Q_N_sleep" value=True>
               <label for="Q_N_sleep">Sleep Studies</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Oncology Services:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Oncology Services:</p>
               <input type="checkbox" id="Q_On_chemo" name="Q_On_chemo" value=True>
               <label for="Q_On_chemo">Chemotherapy</label><br>
               <input type="checkbox" id="Q_On_rad" name="Q_On_rad" value=True>
               <label for="Q_On_rad">Radiation Therapy</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Organ Transplant field:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Organ Transplant Services:</p>
               <input type="checkbox" id="Q_Or_heart" name="Q_Or_heart" value=True>
               <label for="Q_Or_heart">Heart Transplant</label><br>
               <input type="checkbox" id="Q_Or_intestinal" name="Q_Or_intestinal" value=True>
@@ -107,22 +134,22 @@ Register the hospital
               <label for="Q_Or_lung">Lung Transplant</label><br>
               <input type="checkbox" id="Q_Or_pancreas" name="Q_Or_pancreas" value=True>
               <label for="Q_Or_pancreas">Pancreas Transplant</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Orthopedic Services:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Orthopedic Services:</p>
               <input type="checkbox" id="Q_Ortho_Arth" name="Q_Ortho_Arth" value=True>
               <label for="Q_Ortho_Arth">Arthroscopy</label><br>
               <input type="checkbox" id="Q_Ortho_JR" name="Q_Ortho_JR" value=True>
               <label for="Q_Ortho_JR">Joint Replacement</label><br>
               <input type="checkbox" id="Q_Ortho_spine" name="Q_Ortho_spine" value=True>
               <label for="Q_Ortho_spine">Spine Surgery</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Radiology type:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Radiology Services:</p>
               <input type="checkbox" id="Q_R_com_T" name="Q_R_com_T" value=True>
               <label for="Q_R_com_T">Computed Tomography</label><br>
               <input type="checkbox" id="Q_R_com_TA" name="Q_R_com_TA" value=True>
@@ -139,20 +166,20 @@ Register the hospital
               <label for="Q_R_PET">Positron Emission Tomography</label><br>
               <input type="checkbox" id="Q_R_SPECT" name="Q_R_SPECT" value=True>
               <label for="Q_R_SPECT">Single Photon Emission Computerized Tomography</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Rehabiliation Services:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Rehabiliation Services:</p>
               <input type="checkbox" id="Q_Re_phy" name="Q_Re_phy" value=True>
               <label for="Q_Re_phy">Physical Therapy</label><br>
               <input type="checkbox" id="Q_Re_sp" name="Q_Re_sp" value=True>
               <label for="Q_Re_sp">Speech Therapy</label><br>
-            
-              <br>  
-            </div>
-            <div class="beds">
-            <p>Please select Special care:</p>
+
+            <br>
+          </div>
+          <div class="beds">
+            <p>Special care:</p>
               <input type="checkbox" id="Q_Sp_BICU" name="Q_Sp_BICU" value=True>
               <label for="Q_Sp_BICU">Burn Intensive Care</label><br>
               <input type="checkbox" id="Q_Sp_CCU" name="Q_Sp_CCU" value=True>
@@ -165,7 +192,7 @@ Register the hospital
               <label for="Q_Sp_NIC">Neonatal Intensive Care</label><br>
               <input type="checkbox" id="Q_Sp_PeIC" name="Q_Sp_PeIC" value=True>
               <label for="Q_Sp_PeIC">Pediatric Intensive Care</label><br>
-              <input type="checkbox" id="Q_Sp_PrIC" name="Q_Sp_PrIC" value=True>
+            <input type="checkbox" id="Q_Sp_PrIC" name="Q_Sp_PrIC" value=True>
               <label for="Q_Sp_PrIC">Premature Intensive Care</label><br>
               <input type="checkbox" id="Q_Sp_PsIC" name="Q_Sp_PsIC" value=True>
               <label for="Q_Sp_PsIC">Pyschiatric Intensive Care</label><br>
@@ -173,108 +200,51 @@ Register the hospital
               <label for="Q_Sp_SICU">Surgical Intensive Care</label><br>
               <input type="checkbox" id="Q_Sp_TCU" name="Q_Sp_TCU" value=True>
               <label for="Q_Sp_TCU">Trauma Intensive Care</label><br>
-              
-              <br>  
-            </div>
+             
+            <br>
+          </div>
         </div>
-        
+
         <button class="btn btn-main-2 btn-icon btn-round-full" type='submit' id="btnclick">Check for Available Hospitals</button>
       </form>
-   </div>
+    </div>
 
-    </section>
-    <section class="availableHospitals" style='width: auto; margin: 50px auto;'>
-      <div id="hospitals" class='justify-content-center gap-5' style='display: none;'>
-        <div class="card1" style="width: 18rem">
-          <img
-          {% load static %}
-          src="{% static "niramaya/images/hospital1.jpeg" %}"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-main-2 btn-icon btn-round-full"
-              >Request Referral
-            </a>
-          </div>
-        </div>
-        <div class="card2" style="width: 18rem">
-          <img
-          {% load static %}
-            src="{% static "niramaya/images/hospital2.jpeg"%}"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-main-2 btn-icon btn-round-full"
-              >Request Referral</a
-            >
-          </div>
-        </div>
-        <div class="card3" style="width: 18rem">
-          <img
-          {% load static %}
-            src="{% static "niramaya/images/hospital3.jpeg" %}"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-main-2 btn-icon btn-round-full"
-              >Request Referral</a
-            >
-          </div>
-        </div>
-        <div class="card4" style="width: 18rem">
-          <img
-          {% load static %}
-          src="{% static "niramaya/images/hospital3.jpeg" %}"
-            class="card-img-top"
-            alt="..."
-          />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <a href="#" class="btn btn-main-2 btn-icon btn-round-full"
-              >Request Referral</a
-            >
-          </div>
+  </section>
+  <section class="availableHospitals" style='width: auto; margin: 10px 50px'>
+    <div id="hospitals" class=' d-flex gap-5'>
+      {% for hospital in searched_hospitals %}
+      <div class="card1" style="width: 18rem">
+        <img {% load static %} src="{% static "niramaya/images/hospital1.jpeg"%}" class="card-img-top" alt="..." />
+        <div class="card-body" style='aling-text:left; padding: 10px 0;'>
+          <h5 class="card-title">{{hospital.hospital_name}}</h5>
+          <p class="card-title d-flex flex-row gap-2 align-items-center">Serial:{{hospital.serial}} | <span style='background:red; border-radius:3px; padding:5px;'> Level:{{hospital.Level}} </span></p>
+          <p class="card-title"><span>{{hospital.address}}</span> | <span>{{hospital.district}}</span> |<span>{{hospital.State}}</span></p>
+
+          <p class="card-text">
+            Some quick example text to build on the card title and make up the
+            bulk of the card's content.
+          </p>
+          <a href="#" class="btn btn-main-2 btn-icon btn-round-full">Request Referral</a>
         </div>
       </div>
-    </section>
-    
-  </div>
-    {% endblock %}
-    {% load static %}
-    {%block js%}
-    <script>
-      {% comment %} function myFunction() {
-        var element = document.getElementById("hospitl");
-        element.classList.remove("hospitals");
-        element.classList.add("hospital1");
-      } {% endcomment %}
+      {% endfor %}
+    </div>
+  </section>
 
-      document.getElementById('btnclick').addEventListener('click',function (){
-        console.log('carry beta');
-        document.getElementById('hospitals').style.display = "flex";
-      })
-    </script>
-   {%endblock%}
-   
+</div>
+{% endblock %}
+{% load static %}
+{%block js%}
+<script>
+  {% comment %} function myFunction() {
+    var element = document.getElementById("hospitl");
+    element.classList.remove("hospitals");
+    element.classList.add("hospital1");
+  } {% endcomment %}
+
+  document.getElementById('btnclick').addEventListener('click', function () {
+    console.log('carry beta');
+    document.getElementById('hospitals').style.display = "flex";
+  })
+</script>
+{%endblock%}

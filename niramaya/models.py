@@ -2,6 +2,7 @@ from datetime import datetime
 from email.policy import default
 from pyexpat import model
 from sre_parse import State
+from urllib import request
 from django import forms
 from django.db import models
 from django.contrib.auth.models import User
@@ -11,7 +12,7 @@ class hospital(models.Model):
     sno = models.AutoField(primary_key=True)
     hospital_name = models.CharField(max_length=100)
     serial = models.CharField(max_length=10)
-    Level = models.CharField(max_length=5)
+    Level = models.IntegerField(default=0)
     address = models.CharField(max_length=100)
     State = models.CharField(max_length=50)
     district = models.CharField(max_length=10)
@@ -23,20 +24,19 @@ class hospital(models.Model):
     gen_bed = models.IntegerField(default=0)
     spec_bed = models.IntegerField(default=0)
     surg_bed = models.IntegerField(default=0)
-    av_gen_bed = models.IntegerField(default=0)
-    av_spec_bed = models.IntegerField(default=0)
-    av_surg_bed = models.IntegerField(default=0)
-    ICU_units = models.IntegerField(default=0)
-    CIC_units = models.IntegerField(default=0)
-    BIC_units = models.IntegerField(default=0)
-    SIC_units = models.IntegerField(default=0)
-    PsIC_units = models.IntegerField(default=0)
-    PeIC_units = models.IntegerField(default=0)
-    NIC_units = models.IntegerField(default=0)
-    DIC_units = models.IntegerField(default=0)
-    PrIC_units = models.IntegerField(default=0)
-    Nursery_units = models.IntegerField(default=0)
-    Nursery_units = models.IntegerField(default=0)
+    av_gen_bed = models.BooleanField(default=False)
+    av_spec_bed = models.BooleanField(default=False)
+    av_surg_bed = models.BooleanField(default=False)
+    ICU_units = models.BooleanField(default=False)
+    CIC_units = models.BooleanField(default=False)
+    BIC_units = models.BooleanField(default=False)
+    SIC_units = models.BooleanField(default=False)
+    PsIC_units = models.BooleanField(default=False)
+    PeIC_units = models.BooleanField(default=False)
+    NIC_units = models.BooleanField(default=False)
+    DIC_units = models.BooleanField(default=False)
+    PrIC_units = models.BooleanField(default=False)
+    Nursery_units = models.BooleanField(default=False)
 
     Lab_chem = models.BooleanField(default=False)
     Lab_hemo = models.BooleanField(default=False)
@@ -98,6 +98,8 @@ class hospital(models.Model):
     ortho_JR  = models.BooleanField(default=False)
     ortho_spine  = models.BooleanField(default=False)
 
+    def __str__(self):
+        return   self.hospital_name +  ' @ ' + ' | ' + self.district + ' | ' + self.State 
     
 
 

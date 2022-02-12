@@ -224,3 +224,36 @@ button {
 .disabled {
   margin-left: 8px;
 }
+
+.hdsection{
+  background-image:linear-gradient(to right, rgba(255, 255, 255, 0), rgb(116, 112, 112));
+  background-size: cover;
+}
+
+.hdimage{
+  background-image:linear-gradient(to right, rgba(255, 255, 255, 0), rgb(116, 112, 112));
+  opacity: 0.7;
+}
+.hddimage{
+  vertical-align: middle;
+  opacity: 0.7;
+}
+
+.hdimages{
+  width: 500px;
+  transition: all 0.4s;
+  scale: 0.9;
+}
+
+.hdimages:hover{
+  scale: 1;
+}
+
+.box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.boxes{
+  width: 30vw;
+}
