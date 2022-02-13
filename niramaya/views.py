@@ -157,16 +157,19 @@ def refer(request):
     if request.method == 'POST':
         paitent_name = request.POST['paitent_name']
         paitent_id = request.POST['paitent_id']
-        paitentInfo = request.POST['paitent_summary']
+        # paitentInfo = request.POST['paitent_summary']
+        paitentInfo = request.FILES['paitent_summary']
         request_message = request.POST['request_message']
         refernce_hospital_serial = request.POST.get('referal_hospital')
         refernce_hospital = hospital.objects.filter(serial = refernce_hospital_serial).first()
         user = request.user
+        fs = FileSystemStorage()
+        filename = fs.save( paitentInfo.name,paitentInfo)
+        uploaded_file_url = fs.url(filename)
 
-        # paitentInfo = request.FILES[request.POST.get('paitent_summary')]
-        # fs = FileSystemStorage()
-        # name = fs.save(request.POST.get('paitent_summary'), paitentInfo)
-        # context['url'] = fs.url(name)
+        context = {
+            'uploaded_file_url': uploaded_file_url
+        }
 
         referance = refernce(patientName=paitent_name, patientID=paitent_id,patientInfo=paitentInfo,message=request_message,refernce_hospital = refernce_hospital,user=user)
 
