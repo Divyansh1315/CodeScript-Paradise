@@ -7,6 +7,9 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,  login, logout
 from .models import hospital , refernce
+from django.core.files import File
+from django.core.files.storage import FileSystemStorage
+from django.urls import reverse_lazy
 
 # Create your views here.
 
@@ -25,7 +28,7 @@ def handelLogin(request):
         if User is not None:
             login(request, User)
             print('user logged in successfully')
-            return render(request, 'niramaya/register.html', {'username': request.user})
+            return render(request, 'niramaya/ref1.html', {'username': request.user})
         else:
             print("something went wrong")
             return render(request, 'niramaya/login.html', {})
@@ -147,6 +150,7 @@ def refer(request):
         return HttpResponse('404 unauthorised, Login to access')
 
     if request.method == 'POST':
+        print(request.POST['paitent_summary'])
         paitent_name = request.POST['paitent_name']
         paitent_id = request.POST['paitent_id']
         paitent_summary = request.POST['paitent_summary']
@@ -155,7 +159,12 @@ def refer(request):
         refernce_hospital = hospital.objects.filter(serial = refernce_hospital_serial).first()
         user = request.user
 
-        referance = refernce(patientName=paitent_name, patientID=paitent_id,patientInfo=paitent_summary,message=request_message,refernce_hospital = refernce_hospital,user=user)
+        paitent_info = request.FILES['paitent_summary']
+        fs = FileSystemStorage()
+        name = fs.save(paitent_summary, paitent_info)
+        context['url'] = fs.url(name)
+
+        referance = refernce(patientName=paitent_name, patientID=paitent_id,patientInfo=paitent_info,message=request_message,refernce_hospital = refernce_hospital,user=user)
 
         referance.save()
 
@@ -363,13 +372,28 @@ def request_acceptance(request):
 def history(request):
     if request.user.is_anonymous:
         return HttpResponse('404 unauthorised, Login to access')
-    return HttpResponse('referal history')
+    
+    user_hospital = hospital.objects.filter(user = request.user).first()
+    incoming_hospital_referal_requests = refernce.objects.exclude(acceptance = 1)
+    incoming_hospital_referal_requests = refernce.objects.exclude(user = request.user)
+    incoming_hospital_referal_requests = refernce.objects.filter(refernce_hospital = user_hospital)
+
+
+    outgoing_hospital_referal_requests = refernce.objects.filter(user = request.user)
+
+    context = {
+        'incoming_hospital_referal_requests' : incoming_hospital_referal_requests,
+        'outgoing_hospital_referal_requests' : outgoing_hospital_referal_requests
+    }
+    return render(request,'niramaya/history.html',context)
 
 
 def account(request):
     if request.user.is_anonymous:
         return HttpResponse('404 unauthorised, Login to access')
     return render(request, 'niramaya/register.html', {'username': request.user})
+
+
 
 
 def Login(request):

@@ -6,6 +6,7 @@ from urllib import request
 from django import forms
 from django.db import models
 from django.contrib.auth.models import User
+import os
 
 class hospital(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
@@ -103,6 +104,8 @@ class hospital(models.Model):
     
 
 
+def get_path(instance, filename):
+    return os.path.join("static/bucket/", filename)
 
 class refernce(models.Model):
     refernce_sno = models.AutoField(primary_key=True)
@@ -111,15 +114,16 @@ class refernce(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     patientName = models.CharField(max_length=50,default='default')
     patientID = models.CharField(max_length=20)
-    patientInfo = models.FileField(upload_to='documents/')
+    patientInfo = models.FileField(upload_to="info/pdfs/",null=True, blank=True)
     message = models.CharField(max_length=500)
     acceptance_choices =[
     (1, "Waiting"),
     (2, "Accepted"),
     (3, "Rejected"),
 ]
-    acceptance = models.CharField(choices=acceptance_choices ,default=1,max_length=2)
+    acceptance = models.CharField(choices=acceptance_choices ,default=1, max_length=2)
 
     def __str__(self):
         return ' from ' + self.user.username + ' for '  + self.patientName +'|  message:  ' + self.message
+
 # Create your models here.

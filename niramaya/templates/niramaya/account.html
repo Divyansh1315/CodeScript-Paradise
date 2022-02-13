@@ -26,13 +26,13 @@ Register the hospital
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                 <div class="accordion-body d-md-flex flex-column">
                     <input class="my-1 px-2 py-2" name="hospital_name"  id="hospital_name"  placeholder="Enter the Name of branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_serial"  id="brach_serial"  placeholder="Enter the serial no of branch"></input>
-                    <input class="my-1 px-2 py-2" name="hospital_level" type="number" id="hospital_level"  placeholder="Enter the Level of branch"></input>
-                    <input class="my-1 px-2 py-2" name="branc_add" id="branc_add"  placeholder="Enter the Address of branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_state" id="brach_state"  placeholder="Enter the state of branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_district" id="brach_district"  placeholder="Enter the district of  branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_phone" type="number" id="brach_phone"  placeholder="Enter the phone number of branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_head" id="brach_head"  placeholder="Enter the name of head of branch"></input>
+                    <input class="my-1 px-2 py-2" name="serial"  id="brach_serial"  placeholder="Enter the serial no of branch"></input>
+                    <input class="my-1 px-2 py-2" name="Level" type="number" id="hospital_level"  placeholder="Enter the Level of branch"></input>
+                    <input class="my-1 px-2 py-2" name="address" id="branc_add"  placeholder="Enter the Address of branch"></input>
+                    <input class="my-1 px-2 py-2" name="state" id="brach_state"  placeholder="Enter the state of branch"></input>
+                    <input class="my-1 px-2 py-2" name="district" id="brach_district"  placeholder="Enter the district of  branch"></input>
+                    <input class="my-1 px-2 py-2" name="phone" type="number" id="brach_phone"  placeholder="Enter the phone number of branch"></input>
+                    <input class="my-1 px-2 py-2" name="head" id="brach_head"  placeholder="Enter the name of head of branch"></input>
                 </div>
               </div>
             </div>
@@ -50,7 +50,7 @@ Register the hospital
                             <span class="input-group-text px-2" id="inputGroup-sizing-sm">Total number of Doctors</span>
                         </div>
                         <div class="col-9">
-                            <input name="brach_doctors" type="number" class="form-control" id="brach_doctors"  placeholder="Enter the total number of Doctors present in hospital"></input>
+                            <input name="total_Doctors" type="number" class="form-control" id="brach_doctors"  placeholder="Enter the total number of Doctors present in hospital"></input>
                         </div>
                       </div>
                       <div class="row my-2">
@@ -58,7 +58,7 @@ Register the hospital
                             <span class="input-group-text px-2 " id="inputGroup-sizing-sm">Total number of Skilled Doctors</span>
                         </div>
                         <div class="col-9">
-                            <input name="brach_skilled" type="number" class="form-control " id="brach_skilled"  placeholder="Enter the total number of Skilled Doctors present in hospital"></input>
+                            <input name="total_Skilled" type="number" class="form-control " id="brach_skilled"  placeholder="Enter the total number of Skilled Doctors present in hospital"></input>
                         </div>
                       </div>
                       <div class="row my-2">
@@ -66,7 +66,7 @@ Register the hospital
                             <span class="input-group-text px-2 " id="inputGroup-sizing-sm">Total number of Doctors</span>
                         </div>
                         <div class="col-9">
-                            <input name="brach_NonSkilled" type="number" class="form-control" id="brach_NonSkilled"  placeholder="Enter the total number of Practicing Doctors present in hospital"></input>
+                            <input name="total_NonSkilled" type="number" class="form-control" id="brach_NonSkilled"  placeholder="Enter the total number of Practicing Doctors present in hospital"></input>
                         </div>
                       </div>
                 </div>
@@ -86,7 +86,7 @@ Register the hospital
                                 <label class="form my-2" for="">
                                 General Beds
                                 </label>
-                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of General Beds" name="brach_gen_bed" id="brach_gen_bed">
+                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of General Beds" name="genral_beds" id="brach_gen_bed">
                             </div>
                         </div>
                         <div class="col">
@@ -94,7 +94,7 @@ Register the hospital
                                 <label class="form my-2" for="">
                                 Special Beds
                                 </label>
-                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of Special Beds" name="brach_special_bed" id="brach_special_bed">
+                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of Special Beds" name="special_beds" id="brach_special_bed">
                             </div>
                         </div>
                         <div class="col">
@@ -102,14 +102,14 @@ Register the hospital
                                 <label class="form my-2" for="">
                                 Surgical Beds
                                 </label>
-                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of Surgical Beds" name="brach_srg_bed" id="brach_srg_bed">
+                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of Surgical Beds" name="srg_beds" id="brach_srg_bed">
                             </div>
                         </div>
                     </div>
                     <div class="row my-2">
                         <div class="col">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="branch_available_gen_beds" id="branch_available_gen_beds">
+                                <input class="form-check-input" type="checkbox" value= True name="available_gen_beds" id="branch_available_gen_beds">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     General Beds Available 
                                 </label>
@@ -117,7 +117,7 @@ Register the hospital
                         </div>
                         <div class="col">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="branch_available_spec_beds"" id="branch_available_spec_beds">
+                                <input class="form-check-input" type="checkbox" value= True name="available_spec_beds" id="branch_available_spec_beds">
                                 <label class="form-check-label" for="flexCheckDefault">
                                 Special Beds Available
                                 </label>
@@ -125,7 +125,7 @@ Register the hospital
                         </div>
                         <div class="col">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="branch_available_srg_beds" id="branch_available_srg_beds" >
+                                <input class="form-check-input" type="checkbox" value= True name="available_srg_beds" id="branch_available_srg_beds" >
                                 <label class="form-check-label" for="flexCheckDefault">
                                 Surgical Beds Available
                                 </label>
@@ -147,7 +147,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value = True name="branch_ICU" id="branch_ICU">
+                                    <input class="form-check-input" type="checkbox" value= True name="ICU_units" id="branch_ICU">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Intensive Care Unit
                                     </label>
@@ -155,7 +155,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_CIC" id="branch_CIC">
+                                    <input class="form-check-input" type="checkbox" value= True name="CIC_units" id="branch_CIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Coronary Care Unit
                                     </label>
@@ -163,7 +163,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_BIC" id="branch_BIC">
+                                    <input class="form-check-input" type="checkbox" value= True name="BIC_units" id="branch_BIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Burn Intensive Care 
                                     </label>
@@ -173,7 +173,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_SIC" id="branch_SIC">
+                                    <input class="form-check-input" type="checkbox" value= True name="SIC_units" id="branch_SIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Surgical Intensive Care 
                                     </label>
@@ -181,7 +181,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_PsIC" id="branch_PsIC">
+                                    <input class="form-check-input" type="checkbox" value= True name="PsIC_units" id="branch_PsIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Physichiatric Intensive Care
                                     </label>
@@ -189,7 +189,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_PeIC" id="branch_PeIC" >
+                                    <input class="form-check-input" type="checkbox" value= True name="PeIC_units" id="branch_PeIC" >
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Pediatric Intensive Care 
                                     </label>
@@ -199,7 +199,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_NIC" id="branch_NIC">
+                                    <input class="form-check-input" type="checkbox" value= True name="NIC_units" id="branch_NIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Neonatal Intensive Care 
                                     </label>
@@ -207,7 +207,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_TIC" id="branch_TIC">
+                                    <input class="form-check-input" type="checkbox" value= True name="TIC_units" id="branch_TIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Trauma Intensive Care
                                     </label>
@@ -215,7 +215,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_DIC" id="branch_DIC" >
+                                    <input class="form-check-input" type="checkbox" value= True name="DIC_units" id="branch_DIC" >
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Detox Intensive Care 
                                     </label>
@@ -225,7 +225,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_PrIC" id="branch_PrIC">
+                                    <input class="form-check-input" type="checkbox" value= True name="PrIC_units" id="branch_PrIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Premature Intensive Care 
                                     </label>
@@ -233,7 +233,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_Nursery" id="branch_Nursery">
+                                    <input class="form-check-input" type="checkbox" value= True name="Nursery_units" id="branch_Nursery">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Nursery
                                     </label>
@@ -745,7 +745,7 @@ Register the hospital
 </div>
 
 <div class="container my-4 text-center" >
-    <button type="submit" class="btn btn-success">Register</i></button>
+    <button type="submit" class="btn btn-outline-success">Register</i></button>
 </div>
 </form>
 {% endblock %}

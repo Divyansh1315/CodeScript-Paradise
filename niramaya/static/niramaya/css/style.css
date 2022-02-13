@@ -9,7 +9,7 @@
   display: inline-block;
   font-size: 14px;
   font-size: 0.8125rem;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.5px;
   padding: 0.75rem 2rem;
   font-family: "Exo", sans-serif;
@@ -119,27 +119,21 @@
 .btn:focus {
   outline: 0;
 }
-.patientHeading {
-  position: relative;
-  left: 40%;
-  top: 30%;
-  font-weight: bolder;
-  color: #000;
-  font-size: 30px;
-}
 
 .patientDetails {
   margin-top: 70px;
+  display: flex;
+  justify-content: center;
 }
-.required{
-    display: inline-grid;
-    grid-template-columns: auto auto auto;
-    grid-column-gap: 7vw;
-    grid-row-gap: 5vh;
+.required {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 7vw;
+  grid-row-gap: 5vh;
 }
-.beds{
-    margin-top: 20px;
-    padding: 10px;
+.beds {
+  margin-top: 20px;
+  padding: 10px;
 }
 .patientform {
   border: 2px solid palevioletred;
@@ -176,12 +170,12 @@
 .btn1 {
   margin-bottom: 30px;
 }
-.hospital{
-    display: none;
+.hospital {
+  display: none;
 }
 
-#btnclick{
-    margin-left: 25vw;
+#btnclick {
+  margin-left: 25vw;
 }
 .card1 {
   opacity: 1;
@@ -201,7 +195,6 @@ button {
   padding: 5px;
   margin-bottom: 10px;
 }
-
 
 .card-img-top {
   width: 300px;
@@ -225,35 +218,18 @@ button {
   margin-left: 8px;
 }
 
-.hdsection{
-  background-image:linear-gradient(to right, rgba(255, 255, 255, 0), rgb(116, 112, 112));
-  background-size: cover;
+button.btn-hr {
+  padding: 10px;
+  border: 2px solid transparent;
+  margin: 3px;
+  background: #e12454;
+  color: #fff;
+  border-color: #e12454;
 }
 
-.hdimage{
-  background-image:linear-gradient(to right, rgba(255, 255, 255, 0), rgb(116, 112, 112));
-  opacity: 0.7;
-}
-.hddimage{
-  vertical-align: middle;
-  opacity: 0.7;
-}
-
-.hdimages{
-  width: 500px;
-  transition: all 0.4s;
-  scale: 0.9;
-}
-
-.hdimages:hover{
-  scale: 1;
-}
-
-.box{
-  display: flex;
-  justify-content: space-between;
-}
-
-.boxes{
-  width: 30vw;
+button.btn-rs {
+  padding: 10px;
+  border: 2px solid transparent;
+  margin: 3px;
+  box-shadow: none;
 }

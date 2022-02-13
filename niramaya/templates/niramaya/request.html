@@ -1,5 +1,7 @@
-{% extends 'niramaya/basic.html' %} {% block tittle %} Register the hospital {%endblock %} {% block body %}
-{% comment %} <!-- -----------Hospital Request---------------- --> {% endcomment %}
+{% extends 'niramaya/basic.html' %} {% block tittle %} Register the hospital
+{%endblock %} {% block body %} {% comment %}
+<!-- -----------Hospital Request---------------- -->
+{% endcomment %}
 
 <div class="container my-5">
   <h2>Hospital Requests</h2>
@@ -8,7 +10,7 @@
       <thead>
         <tr>
           <th scope="col">Code</th>
-          <th scope="col">Hospital Name</th>
+          <th scope="col">From Hospital Name</th>
           <th scope="col">Request Date</th>
           <th scope="col">Patient Name</th>
           <th scope="col">Patient ID</th>
@@ -17,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        {% for request in  hospital_referal_requests %}
+        {% for request in hospital_referal_requests %}
         <tr>
           <td>{{request.refernce_sno}}</td>
           <td>{{request.user.username}}</td>
@@ -26,45 +28,68 @@
           <td>{{request.patientID}}</td>
           <td class="text-center">
             <a href="{{request.patientInfo}}"
-              ><button class="btn btn-primary btn-round-full">
+              ><button class="btn-hr btn-main-2 btn-round-full">
                 Download Report
               </button></a
             >
           </td>
           <td class="text-center">
-            <form action="./refer_acceptance" method="post">{% csrf_token %}
-              <input  class ="d-none" name = "referal_code" id="referal_code" value = {{request.refernce_sno}}>
-            <a href="#"
-              ><button
-                class="btn btn-success btn-round-full"
-                style="width: 50px"
-                type='submit'
-              >
-                <input  class ="d-none" name = "referal_acceptance" id="referal_acceptance" value = 2>
-                <i class="fas fa-check"></i></button
-            ></a>
+            <form action="./refer_acceptance" method="post">
+              {% csrf_token %}
+              <input
+                class="d-none"
+                name="referal_code"
+                id="referal_code"
+                value="{{request.refernce_sno}}"
+              />
+              <a href="#"
+                ><button
+                  class="btn-rs btn-success btn-round-full"
+                  style="width: 50px"
+                  type="submit"
+                >
+                  <input
+                    class="d-none"
+                    name="referal_acceptance"
+                    id="referal_acceptance"
+                    value="2"
+                  />
+                  <i class="fas fa-check"></i></button
+              ></a>
             </form>
-            <form action="./refer_acceptance" method="post">{% csrf_token %}
-              <input  class ="d-none" name = "referal_code" id="referal_code" value = {{request.refernce_sno}}>
-            <a href="#"
-              ><button
-                class="btn btn-danger btn-round-full"
-                style="width: 50px"
-                type = 'submit'
-              >
-              <input  class="d-none" name='referal_acceptance' id="referal_acceptance" value = 3>
-                <i class="fas fa-times"></i></button
-            ></a>
-          </form>
+            <form action="./refer_acceptance" method="post">
+              {% csrf_token %}
+              <input
+                class="d-none"
+                name="referal_code"
+                id="referal_code"
+                value="{{request.refernce_sno}}"
+              />
+              <a href="#"
+                ><button
+                  class="btn-rs btn-danger btn-round-full"
+                  style="width: 50px"
+                  type="submit"
+                >
+                  <input
+                    class="d-none"
+                    name="referal_acceptance"
+                    id="referal_acceptance"
+                    value="3"
+                  />
+                  <i class="fas fa-times"></i></button
+              ></a>
+            </form>
           </td>
         </tr>
         {% endfor %}
-        
       </tbody>
     </table>
   </div>
 </div>
-{% comment %} <!-- ----------------quote----------------- --> {% endcomment %}
+{% comment %}
+<!-- ----------------quote----------------- -->
+{% endcomment %}
 <section class="section about-page">
   <div class="container my-5">
     <div class="row">
