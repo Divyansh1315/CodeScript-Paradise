@@ -150,18 +150,17 @@ def refer(request):
         return HttpResponse('404 unauthorised, Login to access')
 
     if request.method == 'POST':
-        print(request.POST['paitent_summary'])
         paitent_name = request.POST['paitent_name']
         paitent_id = request.POST['paitent_id']
-        paitent_summary = request.POST['paitent_summary']
+        # paitent_summary = request.POST['paitent_summary']
         request_message = request.POST['request_message']
         refernce_hospital_serial = request.POST.get('referal_hospital')
         refernce_hospital = hospital.objects.filter(serial = refernce_hospital_serial).first()
         user = request.user
 
-        paitent_info = request.FILES['paitent_summary']
+        paitent_info = request.FILES[request.POST.get('paitent_summary')]
         fs = FileSystemStorage()
-        name = fs.save(paitent_summary, paitent_info)
+        name = fs.save(request.POST.get('paitent_summary'), paitent_info)
         context['url'] = fs.url(name)
 
         referance = refernce(patientName=paitent_name, patientID=paitent_id,patientInfo=paitent_info,message=request_message,refernce_hospital = refernce_hospital,user=user)
