@@ -22,65 +22,31 @@
       <tbody>
         {% for request in hospital_referal_requests %}
         <tr>
-          <td>{{request.refernce_sno}}</td>
-          <td>{{request.user.username}}</td>
-          <td>{{request.refernce_date}}</td>
-          <td>{{request.patientName}}</td>
-          <td>{{request.patientID}}</td>
-          <td>{{request.message}}</td>
+          <td class="mx-auto" style="padding: 20px 0;">{{request.refernce_sno}}</td>
+          <td style="padding: 20px 0;">{{request.user.username}}</td>
+          <td style="padding: 20px 0;">{{request.refernce_date}}</td>
+          <td style="padding: 20px 0;">{{request.patientName}}</td>
+          <td style="padding: 20px 0;">{{request.patientID}}</td>
+          <td style="padding: 20px 0;">{{request.message}}</td>
           <td class="text-center">
-            <a href="{{request.patientInfo}}"
-              ><button class="btn-hr btn-main-2 btn-round-full">
+            <a href="{{request.patientInfo}}"><button class="btn-hr btn-main-2 btn-round-full">
                 Download Report
-              </button></a
-            >
+              </button></a>
           </td>
-          <td class="text-center">
+          <td class="text-center d-flex gap-2 justify-content-center" >
             <form action="./refer_acceptance" method="post">
               {% csrf_token %}
-              <input
-                class="d-none"
-                name="referal_code"
-                id="referal_code"
-                value="{{request.refernce_sno}}"
-              />
-              <a href="#"
-                ><button
-                  class="btn-rs btn-success btn-round-full"
-                  style="width: 50px"
-                  type="submit"
-                >
-                  <input
-                    class="d-none"
-                    name="referal_acceptance"
-                    id="referal_acceptance"
-                    value="2"
-                  />
-                  <i class="fas fa-check"></i></button
-              ></a>
+              <input class="d-none" name="referal_code" id="referal_code" value="{{request.refernce_sno}}" />
+              <a href="#"><button class="btn-rs btn-success btn-round-full" style="width: 50px" type="submit">
+                  <input class="d-none" name="referal_acceptance" id="referal_acceptance" value="2" />
+                  <i class="fas fa-check"></i></button></a>
             </form>
             <form action="./refer_acceptance" method="post">
               {% csrf_token %}
-              <input
-                class="d-none"
-                name="referal_code"
-                id="referal_code"
-                value="{{request.refernce_sno}}"
-              />
-              <a href="#"
-                ><button
-                  class="btn-rs btn-danger btn-round-full"
-                  style="width: 50px"
-                  type="submit"
-                >
-                  <input
-                    class="d-none"
-                    name="referal_acceptance"
-                    id="referal_acceptance"
-                    value="3"
-                  />
-                  <i class="fas fa-times"></i></button
-              ></a>
+              <input class="d-none" name="referal_code" id="referal_code" value="{{request.refernce_sno}}" />
+              <a href="#"><button class="btn-rs btn-danger btn-round-full" style="width: 50px" type="submit">
+                  <input class="d-none" name="referal_acceptance" id="referal_acceptance" value="3" />
+                  <i class="fas fa-times"></i></button></a>
             </form>
           </td>
         </tr>

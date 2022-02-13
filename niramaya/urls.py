@@ -4,8 +4,6 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
-
-
 urlpatterns = [
     path('',views.index,name='index'),  
     path('login',views.Login,name='login'),
@@ -18,4 +16,4 @@ urlpatterns = [
     path('handelLogin',views.handelLogin,name='handelLogin'),
     path('logout',views.handelLogout,name='handelLogin'),
     path('createHospital',views.createHospital,name='createHospital'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

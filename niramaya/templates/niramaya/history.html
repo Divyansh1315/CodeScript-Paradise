@@ -30,27 +30,27 @@ Register the hospital
                     <td>{{request.user.username}}</td>
                     <td>{{request.refernce_date}}</td>
                     <td>{{request.patientName}}</td>
-                    <td>{{request.patientID}}</td>
+                    <td >{{request.patientID}}</td>
                     <td class="text-center">
                         <a href="#hosp1"><button class="btn btn-primary btn-round-full">
                                 Review Report
                             </button></a>
                     </td>
-                    {% if request.acceptance == 2 %}
+                    {% if request.acceptance == '2' %}
                     <td class="text-center">
-                        <a href="#"><button class="btn btn-success btn-round-full" style="width: fit-content">
+                        <a href="#"><button class="btn btn-success btn-round-full {{request.acceptance}}" style="width: fit-content">
                                 Accepted
                             </button></a>
                     </td>
-                    {% elif request.acceptance == 2 %}
+                    {% elif request.acceptance == '3' %}
                     <td class="text-center">
-                        <a href="#"><button class="btn btn-danger btn-round-full" style="width: fit-content">
+                        <a href="#"><button class="btn btn-danger btn-round-full {{request.acceptance}}" style="width: fit-content">
                                 Rejected
                             </button></a>
                     </td>
-                    {% else %}
+                    {% else  %}
                     <td class="text-center">
-                        <a href="#"><button class="btn btn-secondary btn-round-full" style="width: fit-content">
+                        <a href="#"><button class="btn btn-secondary btn-round-full {{request.acceptance}}" style="width: fit-content">
                                 Pending
                             </button></a>
                     </td>
@@ -71,7 +71,7 @@ Register the hospital
                     <th scope="col">To Hospital Name</th>
                     <th scope="col">Request Date</th>
                     <th scope="col">Patient Name</th>
-                    <th scope="col" class="text-center">Review</th>
+                    <th scope="col" class="text-center">Patient ID</th>
                     <th scope="col" class="text-center">Patient Summary</th>
                     <th scope="col" class="text-center">Request Status</th>
                 </tr>
@@ -83,25 +83,26 @@ Register the hospital
                     <td>{{request.refernce_hospital.hospital_name}}</td>
                     <td>{{request.refernce_date}}</td>
                     <td>{{request.patientName}}</td>
-                    <td>{{request.patientID}}</td>
+                    <td class="text-center">{{request.patientID}}</td>
                     <td class="text-center">
                         <a href="#hosp1"><button class="btn btn-primary btn-round-full {{request.acceptance}}">
                                 Review Report
                             </button></a>
                     </td>
-                    {% if request.acceptance == 2 %}
+                    
+                    {% if request.acceptance == '2' %}
                     <td class="text-center">
                         <a href="#"><button class="btn btn-success btn-round-full {{request.acceptance}}" style="width: fit-content">
                                 Accepted
                             </button></a>
                     </td>
-                    {% elif request.acceptance == 2 %}
+                    {% elif request.acceptance == '3' %}
                     <td class="text-center">
                         <a href="#"><button class="btn btn-danger btn-round-full {{request.acceptance}}" style="width: fit-content">
                                 Rejected
                             </button></a>
                     </td>
-                    {% else %}
+                    {% else  %}
                     <td class="text-center">
                         <a href="#"><button class="btn btn-secondary btn-round-full {{request.acceptance}}" style="width: fit-content">
                                 Pending

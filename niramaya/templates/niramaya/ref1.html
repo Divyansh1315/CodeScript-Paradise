@@ -9,11 +9,11 @@ Register the hospital
 
 <div id="top" style="width: auto; margin: 50px auto;">
   <section class="patientDetails">
-    <div class="patientform" style='margin: 50px auto;'>
-      <span class="patientHeading">Search Hospitals For Refer </span>
+    <div class="patientform" style='margin: 50px auto; text-align: center;'>
+      <h3 class="font-weight-bold mb-5">Search Hospitals For Refer </h3>
       <form action="./search" method="post">{% csrf_token %}
         <div class="required">
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Beds:</p>
               <input type="checkbox" id="Q_branch_available_gen_beds" name="Q_branch_available_gen_beds" value=True>
               <label for="Q_branch_available_gen_beds">General Beds</label><br>
@@ -24,7 +24,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Labs:</p>
               <input type="checkbox" id="Q_Lab_chem" name="Q_Lab_chem" value=True>
               <label for="Q_Lab_chem">Chemistry</label><br>
@@ -43,7 +43,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Care Units:</p>
               <input type="checkbox" id="Q_branch_ICU" name="Q_branch_ICU" value=True>
               <label for="Q_branch_ICU">Intensive Care Unit</label><br>
@@ -70,7 +70,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Cardiovascular Services:</p>
               <input type="checkbox" id="Q_C_cath" name="Q_C_cath" value=True>
               <label for="Q_C_cath">Cardiac Cath Lab</label><br>
@@ -91,7 +91,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Emergency Services:</p>
               <input type="checkbox" id="Q_EME_dept" name="Q_EME_dept" value=True>
               <label for="Q_EME_dept">Emergency Department</label><br>
@@ -102,7 +102,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Neuroscience Services:</p>
               <input type="checkbox" id="Q_N_EEG" name="Q_N_EEG" value=True>
               <label for="Q_N_EEG">Electroencephalography</label><br>
@@ -111,7 +111,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Oncology Services:</p>
               <input type="checkbox" id="Q_On_chemo" name="Q_On_chemo" value=True>
               <label for="Q_On_chemo">Chemotherapy</label><br>
@@ -120,7 +120,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Organ Transplant Services:</p>
               <input type="checkbox" id="Q_Or_heart" name="Q_Or_heart" value=True>
               <label for="Q_Or_heart">Heart Transplant</label><br>
@@ -137,7 +137,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Orthopedic Services:</p>
               <input type="checkbox" id="Q_Ortho_Arth" name="Q_Ortho_Arth" value=True>
               <label for="Q_Ortho_Arth">Arthroscopy</label><br>
@@ -148,7 +148,7 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Radiology Services:</p>
               <input type="checkbox" id="Q_R_com_T" name="Q_R_com_T" value=True>
               <label for="Q_R_com_T">Computed Tomography</label><br>
@@ -165,11 +165,11 @@ Register the hospital
               <input type="checkbox" id="Q_R_PET" name="Q_R_PET" value=True>
               <label for="Q_R_PET">Positron Emission Tomography</label><br>
               <input type="checkbox" id="Q_R_SPECT" name="Q_R_SPECT" value=True>
-              <label for="Q_R_SPECT">Single Photon Emission Computerized Tomography</label><br>
+              <label for="Q_R_SPECT">Single Photon Emission Computerized Tomo.</label><br>
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Rehabiliation Services:</p>
               <input type="checkbox" id="Q_Re_phy" name="Q_Re_phy" value=True>
               <label for="Q_Re_phy">Physical Therapy</label><br>
@@ -178,40 +178,40 @@ Register the hospital
 
             <br>
           </div>
-          <div class="beds">
+          <div class="beds" style="text-align:left">
             <p>Special care:</p>
               <input type="checkbox" id="Q_Sp_BICU" name="Q_Sp_BICU" value=True>
-              <label for="Q_Sp_BICU">Burn Intensive Care</label><br>
+              <label for="Q_Sp_BICU">Burn Intensive </label><br>
               <input type="checkbox" id="Q_Sp_CCU" name="Q_Sp_CCU" value=True>
-              <label for="Q_Sp_CCU">Coronary Intensive Care</label><br>
+              <label for="Q_Sp_CCU">Coronary Intensive </label><br>
               <input type="checkbox" id="Q_Sp_det" name="Q_Sp_det" value=True>
-              <label for="Q_Sp_det">Detox Intensive Care</label><br>
+              <label for="Q_Sp_det">Detox Intensive </label><br>
               <input type="checkbox" id="Q_Sp_ICU" name="Q_Sp_ICU" value=True>
-              <label for="Q_Sp_ICU">Intensive Care Unit</label><br>
+              <label for="Q_Sp_ICU">Intensive Care </label><br>
               <input type="checkbox" id="Q_Sp_NIC" name="Q_Sp_NIC" value=True>
-              <label for="Q_Sp_NIC">Neonatal Intensive Care</label><br>
+              <label for="Q_Sp_NIC">Neonatal Intensive </label><br>
               <input type="checkbox" id="Q_Sp_PeIC" name="Q_Sp_PeIC" value=True>
-              <label for="Q_Sp_PeIC">Pediatric Intensive Care</label><br>
+              <label for="Q_Sp_PeIC">Pediatric Intensive </label><br>
             <input type="checkbox" id="Q_Sp_PrIC" name="Q_Sp_PrIC" value=True>
-              <label for="Q_Sp_PrIC">Premature Intensive Care</label><br>
+              <label for="Q_Sp_PrIC">Premature Intensive </label><br>
               <input type="checkbox" id="Q_Sp_PsIC" name="Q_Sp_PsIC" value=True>
-              <label for="Q_Sp_PsIC">Pyschiatric Intensive Care</label><br>
+              <label for="Q_Sp_PsIC">Pyschiatric Intensive </label><br>
               <input type="checkbox" id="Q_Sp_SICU" name="Q_Sp_SICU" value=True>
-              <label for="Q_Sp_SICU">Surgical Intensive Care</label><br>
+              <label for="Q_Sp_SICU">Surgical Intensive </label><br>
               <input type="checkbox" id="Q_Sp_TCU" name="Q_Sp_TCU" value=True>
-              <label for="Q_Sp_TCU">Trauma Intensive Care</label><br>
+              <label for="Q_Sp_TCU">Trauma Intensive </label><br>
              
             <br>
           </div>
         </div>
 
-        <button class="btn btn-main-2 btn-icon btn-round-full" type='submit' id="btnclick">Check for Available Hospitals</button>
+        <button class="btn btn-main-2 btn-icon btn-round-full mx-auto" type='submit' herf="#showresults" target="#showresults" id="btnclick">Check for Available Hospitals</button>
       </form>
     </div>
 
   </section>
-  <section class="availableHospitals" style='width: auto; margin: 10px 50px'>
-    <div id="hospitals" class=' d-flex gap-5'>
+  <section class="availableHospitals"  style='width: auto; margin: 10px 50px'>
+    <div id="hospitals" id="showresults" class=' d-flex gap-5'>
       {% for hospital in searched_hospitals %}
       <div class="card1" style="width: 18rem">
         <img {% load static %} src="{% static "niramaya/images/hospital1.jpeg"%}" class="card-img-top" alt="..." />

@@ -127,20 +127,22 @@
 }
 .required {
   display: inline-grid;
-  grid-template-columns: auto auto auto auto;
-  grid-column-gap: 7vw;
-  grid-row-gap: 5vh;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+
+  /* grid-row-gap: 2vw; */
 }
 .beds {
-  margin-top: 20px;
-  padding: 10px;
+  /* margin-top: 5px; */
+  margin-left: 5px;
+  padding: 5px;
 }
 .patientform {
   border: 2px solid palevioletred;
   width: 80vw;
   margin-left: 90px;
   margin-top: 40px;
-  padding: 30px;
+  padding: 20px;
   font: inherit;
   font-weight: 900;
   color: #000;
@@ -148,6 +150,14 @@
 
 .button {
   background-color: palevioletred;
+  
+}
+.patientHeading{
+  margin: 30vw;
+  margin-bottom: 200px;
+  text-align: center;
+  font-size: large;
+  font-size: 30px;
 }
 
 .requirement {
