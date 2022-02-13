@@ -11,7 +11,7 @@ class hospital(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     sno = models.AutoField(primary_key=True)
     hospital_name = models.CharField(max_length=100)
-    serial = models.CharField(max_length=10)
+    serial = models.CharField(max_length=10,unique=True)
     Level = models.IntegerField(default=0)
     address = models.CharField(max_length=100)
     State = models.CharField(max_length=50)
@@ -110,8 +110,8 @@ class refernce(models.Model):
     refernce_hospital = models.ForeignKey(hospital,on_delete=models.CASCADE)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     patientName = models.CharField(max_length=50,default='default')
-    patientID = models.CharField(max_length=20,default='default')
-    patientInfo = models.FileField(upload_to='uploads/')
+    patientID = models.CharField(max_length=20)
+    patientInfo = models.FileField(upload_to='documents/')
     message = models.CharField(max_length=500)
     acceptance_choices =[
     (1, "Waiting"),
@@ -119,4 +119,7 @@ class refernce(models.Model):
     (3, "Rejected"),
 ]
     acceptance = models.CharField(choices=acceptance_choices ,default=1,max_length=2)
+
+    def __str__(self):
+        return ' from ' + self.user.username + ' for '  + self.patientName +'|  message:  ' + self.message
 # Create your models here.

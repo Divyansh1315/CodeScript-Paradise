@@ -10,7 +10,7 @@ Register the hospital
 <div id="top" style="width: auto; margin: 50px auto;">
   <section class="patientDetails">
     <div class="patientform" style='margin: 50px auto;'>
-      <span class="patientHeading">Query Search</span>
+      <span class="patientHeading">Search Hospitals For Refer </span>
       <form action="./search" method="post">{% csrf_token %}
         <div class="required">
           <div class="beds">
@@ -221,10 +221,67 @@ Register the hospital
           <p class="card-title"><span>{{hospital.address}}</span> | <span>{{hospital.district}}</span> |<span>{{hospital.State}}</span></p>
 
           <p class="card-text">
-            Some quick example text to build on the card title and make up the
-            bulk of the card's content.
+          <p class="card-title my-2"><span style='background:red; border-radius:3px; padding:1px;'> Doctors:{{hospital.doctor_nos}} </span></p>
+          <p class="card-title my-2"><span style='background:red; border-radius:3px; padding:1px;'> Genral Beds:{{hospital.gen_bed}} </span><span style='background:red; border-radius:3px; padding:1px;'> Special Beds:{{hospital.spec_bed}} </span><span style='background:red; border-radius:3px; padding:1px;'> Surgery Beds:{{hospital.surg_bed}} </span></p>
+          {% comment %} <p>
+            {% for facalities in query_sets %}
+
+          <p>{{hospital.facalities}}</p>
+
+          <span style='background:red; border-radius:3px; padding:1px;'> {{facalities}} </span>
+          {% if hospital.facalities %}
+
+
+          {% endif %}
+
+          {% endfor %}
+          </p> {% endcomment %}
           </p>
-          <a href="#" class="btn btn-main-2 btn-icon btn-round-full">Request Referral</a>
+
+          <button href="#" class="btn btn-main-2 btn-icon btn-round-full" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal{{hospital.serial}}">Request Referral</button>
+        </div>
+      </div>
+
+      {% comment %} Modal {% endcomment %}
+      <div class="modal fade" id="exampleModal{{hospital.serial}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Patient Details</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form action="./refer_to" method="post">{% csrf_token %}
+              <label for="" class="fw-bold">Paitent Name</label>
+              <input type="text" placeholder="" name='paitent_name' id='paitent_name' class="form-control shadow-none" />
+
+              <label for="" class="fw-bold">Patient ID</label>
+              <input type="text" name='paitent_id' id='paitent_id' class="form-control shadow-none" />
+
+              <div class="input-group mb-3 my-3">
+                <input type="file" name='paitent_summary' id='paitent_summary' class="form-control shadow-none"  />
+                <label class="input-group-text bg-success" for="inputGroupFile02">Upload</label>
+              </div>
+
+              
+
+              <div class="mb-3">
+                <label for="" class="form-label fw-bold">Message</label>
+                <textarea class="form-control" name='request_message' id="request_message" rows="3"></textarea>
+              </div>
+            </div>
+            <div class="d-flex align-items-center">
+            <input class="d-inline" name='referal_hospital' required type="checkbox" id='referal_hospital'  value={{hospital.serial}} />
+            <label  for="referal_hospital">authorised</label>
+          </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn btn-danger" data-bs-dismiss="modal">
+                Send request
+              </button>
+            </form>
+              <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
+          </div>
         </div>
       </div>
       {% endfor %}
