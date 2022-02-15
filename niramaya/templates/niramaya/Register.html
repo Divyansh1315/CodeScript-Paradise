@@ -27,14 +27,14 @@ Register the hospital
               <form action="./createHospital" method="post">{% csrf_token %}
               <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
                 <div class="accordion-body d-md-flex flex-column">
-                    <input class="my-1 px-2 py-2" name="hospital_name"  id="hospital_name"  placeholder="Enter the Name of branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_serial"  id="brach_serial"  placeholder="Enter the serial no of branch"></input>
-                    <input class="my-1 px-2 py-2" name="hospital_level" type="number" id="hospital_level"  placeholder="Enter the Level of branch"></input>
-                    <input class="my-1 px-2 py-2" name="branc_add" id="branc_add"  placeholder="Enter the Address of branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_state" id="brach_state"  placeholder="Enter the state of branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_district" id="brach_district"  placeholder="Enter the district of  branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_phone" type="number" id="brach_phone"  placeholder="Enter the phone number of branch"></input>
-                    <input class="my-1 px-2 py-2" name="brach_head" id="brach_head"  placeholder="Enter the name of head of branch"></input>
+                    <input required class="my-1 px-2 py-2" name="hospital_name"  id="hospital_name"  placeholder="Enter the Name of branch"></input required>
+                    <input required class="my-1 px-2 py-2" name="brach_serial"  id="brach_serial"  placeholder="Enter the serial no of branch"></input required>
+                    <input required class="my-1 px-2 py-2" name="hospital_level" type="number" id="hospital_level"  placeholder="Enter the Level of branch"></input required>
+                    <input required class="my-1 px-2 py-2" name="branc_add" id="branc_add"  placeholder="Enter the Address of branch"></input required>
+                    <input required class="my-1 px-2 py-2" name="brach_state" id="brach_state"  placeholder="Enter the state of branch"></input required>
+                    <input required class="my-1 px-2 py-2" name="brach_district" id="brach_district"  placeholder="Enter the district of  branch"></input required>
+                    <input required class="my-1 px-2 py-2" name="brach_phone" type="number" id="brach_phone"  placeholder="Enter the phone number of branch"></input required>
+                    <input required class="my-1 px-2 py-2" name="brach_head" id="brach_head"  placeholder="Enter the name of head of branch"></input required>
                 </div>
               </div>
             </div>
@@ -49,26 +49,26 @@ Register the hospital
                    
                       <div class="row my-2">
                         <div class="col-3 ">
-                            <span class="input-group-text px-2" id="inputGroup-sizing-sm">Total number of Doctors</span>
+                            <span class="input required-group-text px-2" id="input requiredGroup-sizing-sm">Total number of Doctors</span>
                         </div>
                         <div class="col-9">
-                            <input name="brach_doctors" type="number" class="form-control" id="brach_doctors"  placeholder="Enter the total number of Doctors present in hospital"></input>
+                            <input required name="brach_doctors" type="number" class="form-control" id="brach_doctors"  placeholder="Enter the total number of Doctors "></input required>
                         </div>
                       </div>
                       <div class="row my-2">
                         <div class="col-3 ">
-                            <span class="input-group-text px-2 " id="inputGroup-sizing-sm">Total number of Skilled Doctors</span>
+                            <span class="input required-group-text px-2 " id="input requiredGroup-sizing-sm">Total number of Skilled Staff</span>
                         </div>
                         <div class="col-9">
-                            <input name="brach_skilled" type="number" class="form-control " id="brach_skilled"  placeholder="Enter the total number of Skilled Doctors present in hospital"></input>
+                            <input required name="brach_skilled" type="number" class="form-control " id="brach_skilled"  placeholder="Enter the total number of Skilled Staff"></input required>
                         </div>
                       </div>
                       <div class="row my-2">
                         <div class="col-3 ">
-                            <span class="input-group-text px-2 " id="inputGroup-sizing-sm">Total number of Doctors</span>
+                            <span class="input required-group-text px-2 " id="input requiredGroup-sizing-sm">Total number of Non Skilled Staff</span>
                         </div>
                         <div class="col-9">
-                            <input name="brach_NonSkilled" type="number" class="form-control" id="brach_NonSkilled"  placeholder="Enter the total number of Practicing Doctors present in hospital"></input>
+                            <input required name="brach_NonSkilled" type="number" class="form-control" id="brach_NonSkilled"  placeholder="Enter the total number of Non Skilled Staff"></input required>
                         </div>
                       </div>
                 </div>
@@ -88,7 +88,7 @@ Register the hospital
                                 <label class="form my-2" for="">
                                 General Beds
                                 </label>
-                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of General Beds" name="brach_gen_bed" id="brach_gen_bed">
+                                <input required class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of General Beds" name="brach_gen_bed" id="brach_gen_bed">
                             </div>
                         </div>
                         <div class="col">
@@ -96,7 +96,7 @@ Register the hospital
                                 <label class="form my-2" for="">
                                 Special Beds
                                 </label>
-                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of Special Beds" name="brach_special_bed" id="brach_special_bed">
+                                <input required class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of Special Beds" name="brach_special_bed" id="brach_special_bed">
                             </div>
                         </div>
                         <div class="col">
@@ -104,14 +104,14 @@ Register the hospital
                                 <label class="form my-2" for="">
                                 Surgical Beds
                                 </label>
-                                <input class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of Surgical Beds" name="brach_srg_bed" id="brach_srg_bed">
+                                <input required class="form-control form-control-sm shadow-none w-75" type="number" placeholder="No. of Surgical Beds" name="brach_srg_bed" id="brach_srg_bed">
                             </div>
                         </div>
                     </div>
                     <div class="row my-2">
                         <div class="col">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="branch_available_gen_beds" id="branch_available_gen_beds">
+                                <input  class="form-check-input required" type="checkbox" value= True name="branch_available_gen_beds" id="branch_available_gen_beds">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     General Beds Available 
                                 </label>
@@ -119,7 +119,7 @@ Register the hospital
                         </div>
                         <div class="col">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="branch_available_spec_beds"" id="branch_available_spec_beds">
+                                <input  class="form-check-input required" type="checkbox" value= True name="branch_available_spec_beds"" id="branch_available_spec_beds">
                                 <label class="form-check-label" for="flexCheckDefault">
                                 Special Beds Available
                                 </label>
@@ -127,7 +127,7 @@ Register the hospital
                         </div>
                         <div class="col">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="branch_available_srg_beds" id="branch_available_srg_beds" >
+                                <input  class="form-check-input required" type="checkbox" value= True name="branch_available_srg_beds" id="branch_available_srg_beds" >
                                 <label class="form-check-label" for="flexCheckDefault">
                                 Surgical Beds Available
                                 </label>
@@ -149,7 +149,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value = True name="branch_ICU" id="branch_ICU">
+                                    <input  class="form-check-input required" type="checkbox" value = True name="branch_ICU" id="branch_ICU">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Intensive Care Unit
                                     </label>
@@ -157,7 +157,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_CIC" id="branch_CIC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_CIC" id="branch_CIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Coronary Care Unit
                                     </label>
@@ -165,7 +165,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_BIC" id="branch_BIC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_BIC" id="branch_BIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Burn Intensive Care 
                                     </label>
@@ -175,7 +175,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_SIC" id="branch_SIC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_SIC" id="branch_SIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Surgical Intensive Care 
                                     </label>
@@ -183,7 +183,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_PsIC" id="branch_PsIC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_PsIC" id="branch_PsIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Physichiatric Intensive Care
                                     </label>
@@ -191,7 +191,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_PeIC" id="branch_PeIC" >
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_PeIC" id="branch_PeIC" >
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Pediatric Intensive Care 
                                     </label>
@@ -201,7 +201,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_NIC" id="branch_NIC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_NIC" id="branch_NIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Neonatal Intensive Care 
                                     </label>
@@ -209,7 +209,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_TIC" id="branch_TIC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_TIC" id="branch_TIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Trauma Intensive Care
                                     </label>
@@ -217,7 +217,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_DIC" id="branch_DIC" >
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_DIC" id="branch_DIC" >
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Detox Intensive Care 
                                     </label>
@@ -227,7 +227,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_PrIC" id="branch_PrIC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_PrIC" id="branch_PrIC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Premature Intensive Care 
                                     </label>
@@ -235,7 +235,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="branch_Nursery" id="branch_Nursery">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="branch_Nursery" id="branch_Nursery">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Nursery
                                     </label>
@@ -259,7 +259,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True id="Lab_chem" name="Lab_chem">
+                                    <input  class="form-check-input required" type="checkbox" value= True id="Lab_chem" name="Lab_chem">
                                     <label class="form-check-label" for="flexCheckDefault">
                                     Chemistry Lab
                                     </label>
@@ -267,7 +267,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True id="Lab_hemo" name="Lab_hemo">
+                                    <input  class="form-check-input required" type="checkbox" value= True id="Lab_hemo" name="Lab_hemo">
                                     <label class="form-check-label" for="flexCheckDefault">
                                      Hemaotology Lab
                                     </label>
@@ -275,7 +275,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True id="Lab_microB" name="Lab_microB">
+                                    <input  class="form-check-input required" type="checkbox" value= True id="Lab_microB" name="Lab_microB">
                                     <label class="form-check-label" for="flexCheckDefault">
                                      Microbiology Lab
                                     </label>
@@ -286,7 +286,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True id="Lab_trans" name="Lab_trans">
+                                    <input  class="form-check-input required" type="checkbox" value= True id="Lab_trans" name="Lab_trans">
                                     <label class="form-check-label" for="flexCheckDefault">
                                      Transfusion Services Lab
                                     </label>
@@ -294,7 +294,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True id="Lab_immuno" name="Lab_immuno">
+                                    <input  class="form-check-input required" type="checkbox" value= True id="Lab_immuno" name="Lab_immuno">
                                     <label class="form-check-label" for="flexCheckDefault">
                                      Immunology Lab
                                     </label>
@@ -302,7 +302,7 @@ Register the hospital
                             </div>
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True id="Lab_surg_path" name="Lab_surg_path">
+                                    <input  class="form-check-input required" type="checkbox" value= True id="Lab_surg_path" name="Lab_surg_path">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Surgical Pathology
                                     </label>
@@ -312,7 +312,7 @@ Register the hospital
                         <div class="row">
                             <div class="col">
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True id="Lab_cyto" name="Lab_cyto">
+                                    <input  class="form-check-input required" type="checkbox" value= True id="Lab_cyto" name="Lab_cyto">
                                     <label class="form-check-label" for="flexCheckDefault">
                                      Cytology Lab
                                     </label>
@@ -341,49 +341,49 @@ Register the hospital
                       <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body"><div class="accordion-body">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="C_cath" id="C_cath">
+                                <input  class="form-check-input required" type="checkbox" value= True name="C_cath" id="C_cath">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Cardiac Cath Lab
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="C_rehab" id="C_rehab">
+                                <input  class="form-check-input required" type="checkbox" value= True name="C_rehab" id="C_rehab">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Caridac Rehab
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="C_surgery" id="C_surgery">
+                                <input  class="form-check-input required" type="checkbox" value= True name="C_surgery" id="C_surgery">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Cardiac Surgery
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="C_stenting" id="C_stenting" >
+                                <input  class="form-check-input required" type="checkbox" value= True name="C_stenting" id="C_stenting" >
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Carotid Stenting
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="C_interve" id="C_interve">
+                                <input  class="form-check-input required" type="checkbox" value= True name="C_interve" id="C_interve">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Coronary Interventions
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="C_electro" id="C_electro">
+                                <input  class="form-check-input required" type="checkbox" value= True name="C_electro" id="C_electro">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Electrophysiology
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="C_vas_interv"" id="C_vas_interv">
+                                <input  class="form-check-input required" type="checkbox" value= True name="C_vas_interv"" id="C_vas_interv">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Vascular Intervention
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="C_vas_sur" id="C_vas_sur">
+                                <input  class="form-check-input required" type="checkbox" value= True name="C_vas_sur" id="C_vas_sur">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Vascular Surgery
                                 </label>
@@ -404,49 +404,49 @@ Register the hospital
                       <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body"><div class="accordion-body">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="R_com_T" id="R_com_T">
+                                <input  class="form-check-input required" type="checkbox" value= True name="R_com_T" id="R_com_T">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Computed Tomography
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="R_com_TA" id="R_com_TA">
+                                <input  class="form-check-input required" type="checkbox" value= True name="R_com_TA" id="R_com_TA">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Computed Tomography-Angiography
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="R_dig_mamo" id="R_dig_mamo">
+                                <input  class="form-check-input required" type="checkbox" value= True name="R_dig_mamo" id="R_dig_mamo">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Digital Mammography
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="R_IMRT" id="R_IMRT">
+                                <input  class="form-check-input required" type="checkbox" value= True name="R_IMRT" id="R_IMRT">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Intensity-Modulated Radiation Therapy
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="R_MRA" id="R_MRA">
+                                <input  class="form-check-input required" type="checkbox" value= True name="R_MRA" id="R_MRA">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Magnetic Resonance Angiography
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="R_MRI" id="R_MRI"
+                                <input  class="form-check-input required" type="checkbox" value= True name="R_MRI" id="R_MRI"
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Magnetic Resonance Imaging
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="R_PET" id="R_PET">
+                                <input  class="form-check-input required" type="checkbox" value= True name="R_PET" id="R_PET">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Positron Emission Tomography
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="R_SPECT" id="R_SPECT"
+                                <input  class="form-check-input required" type="checkbox" value= True name="R_SPECT" id="R_SPECT"
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Single Photon Emission Computerized Tomography
                                 </label>
@@ -467,61 +467,61 @@ Register the hospital
                       <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body"><div class="accordion-body">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_BICU" id="Sp_BICU">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_BICU" id="Sp_BICU">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Burn Intensive Care
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_CCU" id="Sp_CCU">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_CCU" id="Sp_CCU">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Coronary Intensive Care
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_det" id="Sp_det">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_det" id="Sp_det">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Detox Intensive Care
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_ICU" id="Sp_ICU">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_ICU" id="Sp_ICU">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Intensive Care Unit
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_NIC" id="Sp_NIC">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_NIC" id="Sp_NIC">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Neonatal Intensive Care
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_PeIC" id="Sp_PeIC">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_PeIC" id="Sp_PeIC">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Pediatric Intensive Care
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_PrIC" id="Sp_PrIC">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_PrIC" id="Sp_PrIC">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Premature Intensive Care
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_PsIC" id="Sp_PsIC">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_PsIC" id="Sp_PsIC">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Pyschiatric Intensive Care
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_SICU" id="Sp_SICU">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_SICU" id="Sp_SICU">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Surgical Intensive Care
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Sp_TCU" id="Sp_TCU">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Sp_TCU" id="Sp_TCU">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Trauma Intensive Care
                                 </label>
@@ -545,13 +545,13 @@ Register the hospital
                       <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingFour" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body"><div class="accordion-body">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Re_phy" id="Re_phy">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Re_phy" id="Re_phy">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Physical Therapy
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Re_sp" id="Re_sp">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Re_sp" id="Re_sp">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Speech Therapy
                                 </label>
@@ -572,13 +572,13 @@ Register the hospital
                       <div id="flush-collapseFive" class="accordion-collapse collapse" aria-labelledby="flush-headingFive" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body"><div class="accordion-body">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="N_EEG" id="N_EEG">
+                                <input  class="form-check-input required" type="checkbox" value= True name="N_EEG" id="N_EEG">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Electroencephalography
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="N_sleep" id="N_sleep">
+                                <input  class="form-check-input required" type="checkbox" value= True name="N_sleep" id="N_sleep">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Sleep Studies
                                 </label>
@@ -600,13 +600,13 @@ Register the hospital
                         <div id="flush-collapseSix" class="accordion-collapse collapse" aria-labelledby="flush-headingSix"    data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body"><div class="accordion-body">
                                 <div class="form-check my-1">
-                                 <input class="form-check-input" type="checkbox" value= True name="On_chemo" id="On_chemo">
+                                 <input  class="form-check-input required" type="checkbox" value= True name="On_chemo" id="On_chemo">
                                  <label class="form-check-label" for="flexCheckDefault">
                                     Chemotherapy
                                   </label>
                                 </div>
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="On_rad" id="On_rad">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="On_rad" id="On_rad">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Radiation Therapy
                                   </label>
@@ -632,37 +632,37 @@ Register the hospital
                       <div id="flush-collapseSeven" class="accordion-collapse collapse" aria-labelledby="flush-headingSeven" data-bs-parent="#accordionFlushExample">
                         <div class="accordion-body"><div class="accordion-body">
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Or_heart" id="Or_heart">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Or_heart" id="Or_heart">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Heart Transplant
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Or_intestinal" id="Or_intestinal">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Or_intestinal" id="Or_intestinal">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Intestinal Transplant
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Or_kidney" id="Or_kidney">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Or_kidney" id="Or_kidney">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Kidney Transplant
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Or_liver" id="Or_liver">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Or_liver" id="Or_liver">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Liver Transplant
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Or_lung" id="Or_lung">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Or_lung" id="Or_lung">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Lung Transplant
                                 </label>
                             </div>
                             <div class="form-check my-1">
-                                <input class="form-check-input" type="checkbox" value= True name="Or_pancreas" id="Or_pancreas">
+                                <input  class="form-check-input required" type="checkbox" value= True name="Or_pancreas" id="Or_pancreas">
                                 <label class="form-check-label" for="flexCheckDefault">
                                     Pancreas Transplant
                                 </label>
@@ -683,19 +683,19 @@ Register the hospital
                         <div id="flush-collapseEight" class="accordion-collapse collapse" aria-labelledby="flush-headingEight" data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body"><div class="accordion-body">
                                     <div class="form-check my-1">
-                                        <input class="form-check-input" type="checkbox" value= True name="Ortho_Arth" id="Ortho_Arth">
+                                        <input  class="form-check-input required" type="checkbox" value= True name="Ortho_Arth" id="Ortho_Arth">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Arthroscopy
                                         </label>
                                     </div>
                                     <div class="form-check my-1">
-                                        <input class="form-check-input" type="checkbox" value= True name="Ortho_JR" id="Ortho_JR">
+                                        <input  class="form-check-input required" type="checkbox" value= True name="Ortho_JR" id="Ortho_JR">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Joint Replacement
                                         </label>
                                     </div>
                                     <div class="form-check my-1">
-                                        <input class="form-check-input" type="checkbox" value= True name="Ortho_spine" id="Ortho_spine">
+                                        <input  class="form-check-input required" type="checkbox" value= True name="Ortho_spine" id="Ortho_spine">
                                         <label class="form-check-label" for="flexCheckDefault">
                                             Spine Surgery
                                         </label>
@@ -718,19 +718,19 @@ Register the hospital
                         <div id="flush-collapseNine" class="accordion-collapse collapse" aria-labelledby="flush-headingNine"    data-bs-parent="#accordionFlushExample">
                             <div class="accordion-body"><div class="accordion-body">
                                 <div class="form-check my-1">
-                                 <input class="form-check-input" type="checkbox" value= True name="EME_dept" id="EME_dept">
+                                 <input  class="form-check-input required" type="checkbox" value= True name="EME_dept" id="EME_dept">
                                  <label class="form-check-label" for="flexCheckDefault">
                                     Emergency Department
                                   </label>
                                 </div>
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name=EME_ped_TC" id="EME_ped_TC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name=EME_ped_TC" id="EME_ped_TC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Pediatric Trauma Center
                                   </label>
                                 </div>
                                 <div class="form-check my-1">
-                                    <input class="form-check-input" type="checkbox" value= True name="EME_TC" id="EME_TC">
+                                    <input  class="form-check-input required" type="checkbox" value= True name="EME_TC" id="EME_TC">
                                     <label class="form-check-label" for="flexCheckDefault">
                                         Trauma Center
                                   </label>
